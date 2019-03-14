@@ -1,5 +1,0 @@
-Function #3 - Long Planeteer Calls 
-
-Goal - if words[] contains an element > 4 characters, return true, otherwise return false
-
-Problem - The function is running, but I am returning true too so

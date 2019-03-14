@@ -57,7 +57,7 @@ function summonCaptainPlanet(planeteerCalls) {
 
 //Function 3 - Long Planeteer Calls 
 //if words[] contains an element > 4 characters, return true, otherwise return false
-//do a while loop
+//do a while loop too
 
 function longPlaneteerCalls(words) {
 //initializes function that brings in words[]
@@ -73,25 +73,44 @@ function longPlaneteerCalls(words) {
   return false;
 }
 
-//Function 4 - Find the Cheese
-//accept an array of strings
-//return first string that is a type of cheese & ignore others
-//SHOULD return foods[i]
-//nested forloops()
-//as opposed to ORs test
-
-  //return "no cheese!"
-    //else return foods[i]
-
+//Function 4 - Find the Cheese Solution 1
+// nested forloop()
+/*
 function findTheCheese (foods) {
   const cheeses = ["cheddar", "gouda", "camembert"];
     for (let i = 0; i < foods.length; i++) {
       for (let j = 0; j < cheeses.length; j++) {
         
         if (foods[i] == cheeses[j]) {
-          return cheeses[j];
+          return foods[i];
         } 
       }   
     } return "no cheese!";
 }
+*/
+
+//Function 4 - Find the Cheese - Solution 2
+//forloop, if statement to test values against the 3 conditions 
+
+/*
+function findTheCheese (foods) {
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] ==  ("cheddar" || "gouda" || "camembert")) {
+          return foods[i];
+      } 
+    } return "no cheese!";
+} 
+*/
+
+//Function 4 - Find the Cheese - Solution 3
+//whileloop
+
+  function findTheCheese(foods) {
+    let i = 0;
+      while (i < foods.length) {
+          if (foods[i] ==  ("cheddar" || "gouda" || "camembert")) {  
+              return foods[i];
+          } i++;
+      } return "no cheese!";
+  } 
 
