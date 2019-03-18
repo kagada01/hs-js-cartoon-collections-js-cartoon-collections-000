@@ -14,3 +14,18 @@ function findTheCheese (foods) {
           
     } 
 } return "no cheese!";
+
+
+//Function 1 - Dwarf Roll Call - Solution 2************************
+//Need to return "'1. Dopey', '2. Grumpy', '3. Bashful'"
+
+function dwarfRollCall(dwarves) {
+  builder = '';
+  array = [];
+  let i = 0; 
+    while (i < dwarves.length) { 
+      let dwarf = `${(i+1)}. ${dwarves[i]}`;
+        builder + dwarf;
+          i++;
+      }
+}
