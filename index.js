@@ -1,7 +1,7 @@
 //Dwarf Roll Call - Solution 1
 //Need to return "1. Dopey, 2. Grumpy, 3. Bashful"
 //forloop()
-/*
+
 function dwarfRollCall(dwarves) {
 // initializes function, accepts elements from dwarves[]
 
@@ -44,7 +44,7 @@ function dwarfRollCall(dwarves) {
       } return array.join('');
       //after loop is completed, joins elements pushed to array[] into a single string for the return value
 }
-*/
+
 //Solution 3
 //forEach()
 
@@ -58,7 +58,6 @@ function dwarfRollCall(dwarves) {
       return array.join('');
 } 
 
-/*
 //Summon Captain Planet - Solution 1
 //need to return ["EARTH!", "WIND!", "FIRE!", "WATER!", "HEART!"]
 //forloop()
@@ -104,7 +103,7 @@ function summonCaptainPlanet(planeteerCalls) {
     } return array;
       //once (i = planeteerCalls.length), returns array[] containing the interpolated strings as elements
 }
-*/
+
 
 //Solution 3 
 //forEach()
@@ -118,9 +117,8 @@ function summonCaptainPlanet(planeteerCalls) {
         i++;
     });
       return array;
-    
 }
-/*
+
 //Long Planeteer Calls - Solution 1
 //if words[] contains an element > 4 characters, return true, otherwise return false
 //forloop()
@@ -142,7 +140,7 @@ function longPlaneteerCalls(words) {
   return false;
   //if none of the elements in words[] are > 4 charaters in length, the loop will end after all of the elements are checked, return false, and exit
 }
-*/
+
 //Solution 2
 //while loop()
 
@@ -163,7 +161,7 @@ function longPlaneteerCalls(words) {
       } return false;
     }   //if none of the elements in words[i] are longer than 4 characters, loop will end, function will return false and exit
 
-/*
+
 //Find the Cheese - Solution 1
 //nested forloop()
 
@@ -191,10 +189,10 @@ function findTheCheese (foods) {
     } return "no cheese!";
 }     //if the none of the elements in foods[] match any of the elements in cheese[], "no cheese!" will return
       //exits the function
-*/
+
 //Solution 2
 //forloop() 
-/*
+
 function findTheCheese (foods) {
 //initializes function, takes in foods[]
     
@@ -212,7 +210,7 @@ function findTheCheese (foods) {
       //if none of the elements in foods[] are equal to one of the 3 strings in the condition, the functio will outpput "no cheese!"
       //and exit
 } 
-*/
+
 //Solution 3
 //whileloop
 
@@ -230,3 +228,4 @@ function findTheCheese (foods) {
             //if the condition evaluates false, the loop counter variable increments and goes up to reevaluate the while condition
   } return "no cheese!"; 
 }   //returns this string and exits function if none of the elements from foods[] meet the condition
+
