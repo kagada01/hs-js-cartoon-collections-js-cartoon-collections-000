@@ -8,7 +8,7 @@ function dwarfRollCall(dwarves) {
   let list = [];
   // list [] will store the value of the interpolated string dwarfList each go through the for loop
   
-    for (var i = 0; (i < dwarves.length); i++) {
+    for (var i = 0; (i < (dwarves.length)/2); i++) {
     //initializes loop based on the length of dwarves[], brought in as an argument of the function
         
         list.push(`${i+1}. ${dwarves[i]} `);
@@ -168,7 +168,7 @@ function longPlaneteerCalls(words) {
 function findTheCheese (foods) {
 //intializes function, takes in foods[]
   
-  const cheeses = ["cheddar", "gouda", "camembert"];
+  const cheeses = ["cheddar", "gouda", "camembert", "swiss"];
   //list of cheese won't change in this problem, so set to constant array
     
     for (let i = 0; i < foods.length; i++) {
@@ -200,7 +200,7 @@ function findTheCheese (foods) {
     //sets counter variable = 0, and will continue as long as there are elements remaining in foods[]
     //incrememnts counter at the end of loop
         
-        if (foods[i] ==  ("cheddar" || "gouda" || "camembert")) {
+        if (foods[i] ==  ("cheddar" || "gouda" || "camembert" || "swiss")) {
         //creates condition to check element of foods[] against, must be equal to one of the 3 strings 
           
           return foods[i];
@@ -229,3 +229,15 @@ function findTheCheese (foods) {
   } return "no cheese!"; 
 }   //returns this string and exits function if none of the elements from foods[] meet the condition
 
+function startsWithB(array) {
+  
+let arrayOne = [];
+  
+  for (let i = 0; i < array.length; i++) {
+        
+        if (array[i].startsWith(“b”)); {
+            arrayOne.push(array[i]);
+        }
+  }     
+      return arrayOne;
+}
