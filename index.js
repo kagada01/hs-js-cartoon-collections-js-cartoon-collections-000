@@ -1,5 +1,5 @@
-//Function 1 - Dwarf Roll Call - Solution 1 - COMMENTS COMPLETE
-//Need to return "'1. Dopey', '2. Grumpy', '3. Bashful'"
+//Dwarf Roll Call - Solution 1
+//Need to return "1. Dopey, 2. Grumpy, 3. Bashful"
 //forloop()
 /*
 function dwarfRollCall(dwarves) {
@@ -19,8 +19,8 @@ function dwarfRollCall(dwarves) {
     return list.join('');
     //once the loop index is equal to dwarves.length, the loop ends, and the function returns the elements in list[] as a single string
 }
-*/
-//Function 1 - Dwarf Roll Call - Solution 2 - COMMENTS COMPLETE
+
+//Solution 2
 //whileloop()
 
 function dwarfRollCall(dwarves) { 
@@ -44,13 +44,27 @@ function dwarfRollCall(dwarves) {
       } return array.join('');
       //after loop is completed, joins elements pushed to array[] into a single string for the return value
 }
+*/
+//Solution 3
+//forEach()
 
-//Function 2 - Summon Captain Planet - Solution 1  - COMMENTS COMPLETE
-// need to return ["EARTH!", "WIND!", "FIRE!", "WATER!", "HEART!"]
+function dwarfRollCall(dwarves) {
+  let array = [];
+  let i = 0;
+    dwarves.forEach(function(dwarf) {
+      array.push(`${i+1}. ${dwarves[i]} `);
+        i++;
+    });
+      return array.join('');
+} 
+
+/*
+//Summon Captain Planet - Solution 1
+//need to return ["EARTH!", "WIND!", "FIRE!", "WATER!", "HEART!"]
 //forloop()
 
 function summonCaptainPlanet(planeteerCalls) {
-//initializes function, accepts planeteerCalls[] 
+//initializes function, accepts planeteerCalls[] as an argument
 
   let capCalls = [];
   //this will be the array that the strings are pushed into
@@ -66,68 +80,99 @@ function summonCaptainPlanet(planeteerCalls) {
         //returns capCalls[] once (i = planeteerCalls.length)
 }
 
-//Function 2  - Summon Captain Planet - Solution 2 
+//Solution 2
 //whileloop()
 
 function summonCaptainPlanet(planeteerCalls) {
-//
-  let array = [];
-  //
-  let i = 0;
-  //
-    while (i < planeteerCalls.length) {
-    //
-      array.push(`${planeteerCalls[i].toUpperCase()}!`);
-      //
-        i++;
-        //
-    } return array;
-      //
+//initializes function, accepts planeteerCalls[] as an argument
   
-}
-
-//Function 3 - Long Planeteer Calls Solution 1
-//if words[] contains an element > 4 characters, return true, otherwise return false
-//forloop()
-
-/*
-function longPlaneteerCalls(words) {
-//initializes function that brings in words[]
-  for (let i = 0; i < words.length; i++) {
-  //enters loop which sets a variable to 0 and sets the condition to not go beyond the length of words[]
-  //at the end of the loop increases the variable i so the next element from words[] is ran through the loop's conditions
+  let array = [];
+  //defines empty array to store string values in during loop, also final return value
+  
+  let i = 0;
+  //sets loop counter variable to 0
     
-    if (words[i].length > 4) {
+    while (i < planeteerCalls.length) {
+    //initializes while loop, will execute loop below as long as (i < planeteerCalls.length)
       
-      return true;
-    }
-  }
-  return false;
+      array.push(`${planeteerCalls[i].toUpperCase()}!`);
+      //pushes interpolated string value to array[]
+        
+        i++;
+        //increments the loop counter before reinitializing the loop
+  
+    } return array;
+      //once (i = planeteerCalls.length), returns array[] containing the interpolated strings as elements
 }
 */
 
-//Function 3 - Long Planeteer Calls Solution 2
+//Solution 3 
+//forEach()
+
+function summonCaptainPlanet(planeteerCalls) {
+  let i = 0;
+  let array = [];
+  
+    planeteerCalls.forEach(function(call) {
+      array.push(`${planeteerCalls[i].toUpperCase()}!`);
+        i++;
+    });
+      return array;
+    
+}
+/*
+//Long Planeteer Calls - Solution 1
+//if words[] contains an element > 4 characters, return true, otherwise return false
+//forloop()
+
+function longPlaneteerCalls(words) {
+//initializes function, accepts words[] as an argument
+  
+  for (let i = 0; i < words.length; i++) {
+  //enters loop which sets a variable to 0 and sets the condition to not go beyond the length of words[]
+    
+    if (words[i].length > 4) {
+    //checks if the length of the element pulled from words[] is greater than 4 characters
+      
+      return true;
+      //if words[i] is longer than 4 characters, the function returns true and exits
+      //if not, the loop counter variable will incremement, and reinitialize the loop to check the next element in words[]
+    }
+  }
+  return false;
+  //if none of the elements in words[] are > 4 charaters in length, the loop will end after all of the elements are checked, return false, and exit
+}
+*/
+//Solution 2
 //while loop()
 
 function longPlaneteerCalls(words) {
+//intializes function, accepts words[]
+  
   let i = 0;
+  //sets counter variable to 0
     while ( i < words.length ) {
-        if (words[i].length < 5) {
-          return false;
-        } else {
-            return true;
-          } 
-    } 
-} 
+    //if (i < the number of elements in words[]), loop is initialized
+        
+        if (words[i].length > 4) {
+        //checks element length to see if longer than 4 characters
+           return true;
+          //if words[i] is longer than 4 characters, the function will return true and exit
+        } i++;
+          //if words[i] is not longer than 4 characters, the counter variable will increment and evaluate the condition 
+      } return false;
+    }   //if none of the elements in words[i] are longer than 4 characters, loop will end, function will return false and exit
 
-//Function 4 - Find the Cheese Solution 1 - NOTES COMPLETE
-// nested forloop()
+/*
+//Find the Cheese - Solution 1
+//nested forloop()
 
 function findTheCheese (foods) {
 //intializes function, takes in foods[]
   
   const cheeses = ["cheddar", "gouda", "camembert"];
-  //list of cheese won't change, so set to variable
+  //list of cheese won't change in this problem, so set to constant array
+    
     for (let i = 0; i < foods.length; i++) {
     //initializes loop based on the length of foods[], brought in as an argument of the function
     
@@ -135,54 +180,53 @@ function findTheCheese (foods) {
       //initializes loop based on the length of the constant cheeses[] defined above  
         
         if (foods[i] == cheeses[j]) {
-        //checks if the element (foods[i]) from foods[], matches the element from cheese[] 
+        //checks if the element (foods[i]) matches the element from cheese[j] 
           
           return foods[i];
-          //if the elements from the respect arrays are equal, the element will be returned
-          //exits the function
+          //if the elements from the respective arrays match, the element will be returned and exit
         }
-        //condition ends 
+        //if the elements are not equal, both loop counter variables will increment and function will reevalute the loop conditions
       }  
       //forloop ends
     } return "no cheese!";
 }     //if the none of the elements in foods[] match any of the elements in cheese[], "no cheese!" will return
       //exits the function
-
-
-//Function 4 - Find the Cheese - Solution 2
-//forloop(), if statement to test values against the 3 conditions 
-
+*/
+//Solution 2
+//forloop() 
 /*
 function findTheCheese (foods) {
-//
+//initializes function, takes in foods[]
+    
     for (let i = 0; i < foods.length; i++) {
-    //
+    //sets counter variable = 0, and will continue as long as there are elements remaining in foods[]
+    //incrememnts counter at the end of loop
+        
         if (foods[i] ==  ("cheddar" || "gouda" || "camembert")) {
-        //
+        //creates condition to check element of foods[] against, must be equal to one of the 3 strings 
+          
           return foods[i];
-          //
+          //if foods[i] is equal to any of the 3 strings, the function will return the element foods[i] and exit
       } 
     } return "no cheese!";
-      //
+      //if none of the elements in foods[] are equal to one of the 3 strings in the condition, the functio will outpput "no cheese!"
+      //and exit
 } 
 */
+//Solution 3
+//whileloop
 
-//Function 4 - Find the Cheese - Solution 3
-//whileloop, if statement to test values against the 3 conditions
-/*
   function findTheCheese(foods) {
-  //
+  //initializes function, takes in foods[]
     let i = 0;
-    //
+    //sets loop counter variable to 0
       while (i < foods.length) {
-      //
+      //checks condition, if it evaluates true, the loop begins
           if (foods[i] ==  ("cheddar" || "gouda" || "camembert")) {  
-          //
+          //checks if the element from foods[] matches any of the values in the condition
               return foods[i];
-              //
+              //if the element from foods[] matches one of the conditions, the element is returned and exits
           } i++;
-            //
-      } return "no cheese!";
-        //
-  } 
-*/
+            //if the condition evaluates false, the loop counter variable increments and goes up to reevaluate the while condition
+  } return "no cheese!"; 
+}   //returns this string and exits function if none of the elements from foods[] meet the condition

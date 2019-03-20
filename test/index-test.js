@@ -24,7 +24,7 @@ describe("summonCaptainPlanet", function() {
 
 describe("longPlaneteerCalls", function() {
       it("returns true if any calls are longer than 4 characters", function() {
-        var longCalls = ["earth", "wind", "fire", "water", "heart"];
+        var longCalls = ["wind", "earth", "fire", "water", "heart"];
         expect(longPlaneteerCalls(longCalls)).toBe(true);
       });
 
